@@ -8,13 +8,21 @@ const items = [
 
 const MenuItems = () => {
     return (
-        <View style={{flex: 0.75, marginTop: 100}}>
-<ScrollView style={{padding:40, backgroundColor: 'green'}}>
+        <View style={{flex: 1,}}>
+<ScrollView indicatorStyle={'white'} style={{padding:40, backgroundColor: 'black',}}>
     <Text style={{fontSize:40, flexWrap: 'wrap', color: 'white'}}>
         View Menu
     </Text>
     <Text style={{color: 'white', fontSize:30}}>{items[0]}</Text>
+
+    <View>
+  <Text>Some text
+    <Text> Some more text</Text>
+  </Text>
+</View>
 </ScrollView>
+
+
         </View>
     );
 };

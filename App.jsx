@@ -10,7 +10,7 @@ const App = () => {
     <View style={{backgroundColor: 'black', flex: 1}}>
       <Header />
       <Welcome />
-      <MenuItems />
+      {/* <MenuItems /> */}
       <Footer />
     </View>
   );
