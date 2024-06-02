@@ -1,18 +1,12 @@
 import React from 'react';
-import {View} from 'react-native';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import Welcome from './components/Welcome/Welcome';
-import MenuItems from './components/MenuItems/MenuItems';
+import { Text, View } from 'react-native';
+import MenuItems from './components/MenuItems';
 
 const App = () => {
   return (
-    <View style={{backgroundColor: 'black', flex: 1}}>
-      <Header />
-      <Welcome />
-      {/* <MenuItems /> */}
-      <Footer />
-    </View>
+   <View>
+  <MenuItems></MenuItems>
+   </View>
   );
 };
 
