@@ -43,7 +43,6 @@ const Item = ({ name }) => (
 const Separator = () => <View style={menuStyles.separator}></View>
 
 
-
 const SectionListPage = () => {
 
   const renderItem = ({ item }) => <Item name={item} />
