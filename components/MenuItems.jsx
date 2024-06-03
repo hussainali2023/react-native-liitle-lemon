@@ -104,25 +104,37 @@ const users = [
     { id: 100, name: 'User 100', email: 'user100@example.com' }
   ];
   
-  
+const Separator = () => <View style={menuStyles.seprator}/>
+const Header = () => <Text style={menuStyles.headerText}>Menu Items</Text>
+const Footer = () => (
+    <Text style={menuStyles.footerText}>
+        All Rights Reserved by Hussain, 2024
+    </Text>
+)
 
-const User = ({ name }) => (
+
+const User = ({ name, email }) => (
     <View style={menuStyles.innerContainer}>
         <Text style={menuStyles.userText}>{name}</Text>
+        <Text style={menuStyles.userText}>{email}</Text>
     </View>
 );
 
 const MenuItems = () => {
-    const renderUser = ({ item }) => <User name={item.name} />;
+    const renderUser = ({ item }) => <User name={item.name} email={item.email} />;
 
     return (
         <View style={menuStyles.container}>
-            <Text style={menuStyles.headerText}>Menu Items</Text>
+            
             <FlatList
                 data={users}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={renderUser}
+                ItemSeparatorComponent={Separator}
+                ListHeaderComponent={Header}
+                ListFooterComponent={Footer}
             />
+           
         </View>
     );
 };
@@ -132,23 +144,39 @@ export default MenuItems;
 const menuStyles = StyleSheet.create({
     container: {
         
-        padding: 20,
+        // padding: 20,
+
         backgroundColor: '#fff',
     },
     headerText: {
         fontSize: 30,
         textAlign: "center",
         marginVertical: 20,
+        color:"red",
+        fontWeight: "bold"
     },
+    footerText: {
+        backgroundColor:"yellow",
+        textAlign:"center",
+        paddingVertical:10,
+        color:"green",
+        fontWeight:"bold"
+    }, 
     innerContainer: {
         paddingHorizontal: 40,
         paddingVertical: 20,
         backgroundColor: "black",
         marginVertical: 10,
-        borderRadius: 10,
+        marginHorizontal:10,
+        borderRadius: 50,
     },
     userText: {
         color: "#F4CE14",
         fontSize: 24,
+    },
+    seprator: {
+        
+        backgroundColor:"red"
+
     }
 });
